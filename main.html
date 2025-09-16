@@ -15,7 +15,7 @@
             <nav class="flex justify-around items-center">
                 <img class="w-16" src="assets/Group.png" alt="">
                 <div>
-                    <h1 class="text-3xl font-bold text-center">$ <span id="add-money-balance">4500</span></h1>
+                    <h1 class="text-3xl font-bold text-center">$ <span id="main-balance">4500</span></h1>
                     <p class="border rounded p-1">Available Balance</p>
                 </div>
                 <button class="btn font-semibold btn-primary">Log Out</button>
@@ -27,37 +27,37 @@
 
                 <div class="cards grid grid-cols-3 mt-6 gap-2">
                     <!-- Card 1--------------------- -->
-                    <div class="box border py-4 text-center rounded-xl">
+                    <div id="add-money-box" class="box border py-4 text-center rounded-xl">
                         <img class="w-8 mx-auto" src="assets/wallet1.png" alt="">
                         <h3>Add Money</h3>
                     </div>
 
                     <!-- Card 2-------------------- -->
-                    <div class="box border py-4 text-center rounded-xl">
+                    <div id="cash-out-box" class="box border py-4 text-center rounded-xl">
                         <img class="w-8 mx-auto" src="assets/send1.png" alt="">
                         <h3>Cash Out</h3>
                     </div>
 
                     <!-- Card 3--------------------- -->
-                    <div class="box border py-4 text-center rounded-xl">
+                    <div id="transfer-money-box" class="box border py-4 text-center rounded-xl">
                         <img class="w-8 mx-auto" src="assets/money1.png" alt="">
                         <h3>Transfer Money</h3>
                     </div>
 
                     <!-- Card 4--------------------- -->
-                    <div class="box border py-4 text-center rounded-xl">
+                    <div id="get-bonus-box" class="box border py-4 text-center rounded-xl">
                         <img class="w-8 mx-auto" src="assets/bonus1.png" alt="">
                         <h3>Get Bonus</h3>
                     </div>
 
                     <!-- Card 5-------------------- -->
-                    <div class="box border py-4 text-center rounded-xl">
+                    <div id="pay-bill-box" class="box border py-4 text-center rounded-xl">
                         <img class="w-8 mx-auto" src="assets/purse1.png" alt="">
                         <h3>Pay Bill</h3>
                     </div>
 
                     <!-- Card 6--------------------- -->
-                    <div class="box border py-4 text-center rounded-xl">
+                    <div id="transaction-box" class="box border py-4 text-center rounded-xl">
                         <img class="w-8 mx-auto" src="assets/transaction1.png" alt="">
                         <h3>Transactions</h3>
                     </div>
@@ -65,7 +65,7 @@
             </section>
 
             <!-- Add Money Form Section -->
-            <Section class="my-2">
+            <Section id="add-money-section" class="my-2">
                 <h1 class="text-xl font-bold ml-5">Add Money</h1>
                 <div class="">
                     <div class="hero-content flex-col lg:flex-row-reverse">
@@ -81,25 +81,61 @@
                                 </select>
                                 <fieldset class="fieldset">
                                     <label class="label text-base font-medium text-black">Bank Account Number</label>
-                                    <input type="number" value="01301301302"  class="input rounded-full w-full border-none" placeholder="Enter 11 digit account number" />
+                                    <input type="number" value="01301301302"
+                                        class="input rounded-full w-full border-none"
+                                        placeholder="Enter 11 digit account number" />
 
                                     <label class="label text-base font-medium text-black">Amount to Add</label>
-                                    <input id="add-money-amount" type="text" class="input rounded-full w-full border-none" placeholder="Enter the Amount" />
+                                    <input id="add-money-amount" type="text"
+                                        class="input rounded-full w-full border-none" placeholder="Enter the Amount" />
 
                                     <label class="label text-base font-medium text-black">Pin Number</label>
-                                    <input id="add-money-pin" type="text" class="input rounded-full w-full border-none" placeholder="Enter 4 digit pin" />
-                                    
-                                    <button id="add-money-btn" class="btn btn-primary mt-4 rounded-full">Add Money</button>
+                                    <input id="add-money-pin" type="text" class="input rounded-full w-full border-none"
+                                        placeholder="Enter 4 digit pin" />
+
+                                    <button id="add-money-btn" class="btn btn-primary mt-4 rounded-full">Add
+                                        Money</button>
                                 </fieldset>
                             </form>
                         </div>
                     </div>
                 </div>
             </Section>
+
+            <!-- Cash Out Form Section -->
+            <section id="cash-out-section" class="my-2">
+                <h1 class="text-xl font-bold ml-5">Cash Out</h1>
+                <div class="">
+                    <div class="hero-content flex-col lg:flex-row-reverse">
+                        <div class="card w-full max-w-sm shrink-0 shadow-2xl">
+                            <form class="card-body">
+                                <fieldset class="fieldset">
+                                    <label class="label text-base font-medium text-black">Bank Account Number</label>
+                                    <input type="number" value="01301301302"
+                                    class="input rounded-full w-full border-none"
+                                    placeholder="Enter 11 digit account number"/>
+
+                                    <label class="label text-base font-medium text-black">Amount</label>
+                                    <input id="cash-out-amount" type="text"
+                                    class="input rounded-full w-full border-none" placeholder="Enter the Amount" />
+
+                                    <label class="label text-base font-medium text-black">Pin Number</label>
+                                    <input id="cash-out-pin" type="text" class="input rounded-full w-full border-none"
+                                    placeholder="Enter 4 digit pin" />
+
+                                    <button id="cash-out-btn" class="btn btn-primary mt-4 rounded-full">Withdraw Money</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </header>
     </section>
     <!-- <script src="JS/addMoney.js"></script> -->
     <script src="JS/recapaddmoney.js"></script>
+    <script src="JS/toggle.js"></script>
+    <script src="JS/cashout.js"></script>
 </body>
 
 </html>

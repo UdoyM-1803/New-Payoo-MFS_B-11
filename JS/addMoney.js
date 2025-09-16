@@ -10,7 +10,7 @@ document.getElementById('add-money-btn')
 
 
         // Get the Main balance/Current balance----------
-        const currentBalance = document.getElementById('add-money-balance').innerText;
+        const currentBalance = document.getElementById('main-balance').innerText;
         const numCurrentBalance = parseFloat(currentBalance);
         // 0000000000000000000000000000000000000000000000
 
@@ -21,7 +21,7 @@ document.getElementById('add-money-btn')
 
         if (numberPin === 1234) {
             const newBalance = numCurrentBalance + numAmount;
-            document.getElementById('add-money-balance').innerText = newBalance;
+            document.getElementById('main-balance').innerText = newBalance;
         }
         else {
             alert("Unable to Perform....!!!!");

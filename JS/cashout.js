@@ -1,13 +1,13 @@
-document.getElementById('add-money-btn')
-    .addEventListener('click', function(event) {
+document.getElementById('cash-out-btn')
+    .addEventListener('click', function (event) {
         event.preventDefault();
 
 
         // Get the PIN and Amount and converted them into integer and float -----------------------------
-        const amount = document.getElementById('add-money-amount').value;
+        const amount = document.getElementById('cash-out-amount').value;
         const numAmount = parseFloat(amount);
 
-        const pin = document.getElementById('add-money-pin').value;
+        const pin = document.getElementById('cash-out-pin').value;
         const numberPin = parseInt(pin);
         // 00000000000000000000000000000000000000000000000
 
@@ -21,8 +21,13 @@ document.getElementById('add-money-btn')
         // Validate the PIN number and Amount 
         if (numAmount && numberPin) {
             if (numberPin === 1234) {
-                const newBalance = numCurrentBalance + numAmount;
-                document.getElementById('main-balance').innerText = newBalance;
+                if (numAmount < numCurrentBalance) {
+                    const newBalance = numCurrentBalance - numAmount;
+                    document.getElementById('main-balance').innerText = newBalance;
+                }
+                else {
+                    alert("Insufficient Balance...!!!!");
+                }
             }
             else {
                 alert("Wrong Validation....!!!!")
@@ -32,4 +37,4 @@ document.getElementById('add-money-btn')
             alert("Unable to Perform...!!!!");
         }
         // 0000000000000000000000000000000000000000000000
-})
+    })
